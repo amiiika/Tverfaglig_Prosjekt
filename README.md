@@ -1,3 +1,3 @@
 # Tverfaglig_Prosjekt
 
-Nettside som dokumenterer et autentiseringsrammeverk. Nettsiden skal også vise hvordan jeg vurderer sikkerheten, både opp mot personvern og datasikkerhet. 
+Website that documents an authentication framework. The website will also show how I assess security, both in terms of privacy and data security. 
