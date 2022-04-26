@@ -1,3 +1,6 @@
+//environment variable
+require("dotenv").config();
+
 //requiring modules
 const express = require("express");
 const bodyParser = require("body-parser");
