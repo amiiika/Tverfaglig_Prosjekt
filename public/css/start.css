@@ -25,6 +25,9 @@ body {
     letter-spacing: -.05rem;
 }
 
+footer {
+    text-align: center;
+}
 
 /* RESPONSIVE CSS
 -------------------------------------------------- */

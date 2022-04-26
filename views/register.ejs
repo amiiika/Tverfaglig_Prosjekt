@@ -17,30 +17,30 @@
 
 
     <!-- Custom styles for this template -->
-    <link href="../public/css/register.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/register.css">
 </head>
 
 <body class="text-center">
 
     <main class="form-signin">
         <form action="/register" method="post">
-            <img class="profile mb-4 " src="../public/src/profile.jpg" alt="Profile image">
+            <img class="profile mb-4 " src="src/profile.jpg" alt="Profile image">
             <h1 class=" h3 mb-3 fw-normal">Register</h1>
 
             <div class="form-floating">
-                <input type="text" class="form-control" placeholder="Username" name="username">
+                <input type="text" class="form-control" placeholder="Username" name="username" required>
                 <label for="username">Username</label>
             </div>
             <div class="form-floating">
-                <input type="password" class="form-control" placeholder="Password" name="password">
+                <input type="password" class="form-control" placeholder="Password" name="password" required>
                 <label for="password">Password</label>
             </div>
             <div class="form-floating">
-                <input type="password" class="form-control" placeholder="Password" name="password2">
+                <input type="password" class="form-control" placeholder="Password" name="password2" required>
                 <label for="password2">Repeat password</label>
             </div>
 
-            <button class="w-100 btn btn-lg btn" type="submit">Register</button>
+            <button class="w-100 btn btn-lg btn" type="submit">Submit</button>
 
             <a href="/signin">
                 <p class="switch-method">Already have an acount? Log in</p>
