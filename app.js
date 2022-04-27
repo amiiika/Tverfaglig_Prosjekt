@@ -61,9 +61,39 @@ app.get("/signin", function (req, res) {
   res.render("signin");
 });
 
+app.get("/logout", function (req, res) {
+  req.logout();
+  res.redirect("/");
+});
+
+//after logging in views
 app.get("/home", function (req, res) {
   if (req.isAuthenticated()) {
     res.render("home");
+  } else {
+    res.redirect("/signin");
+  }
+});
+
+app.get("/configuration", function (req, res) {
+  if (req.isAuthenticated()) {
+    res.render("configuration");
+  } else {
+    res.redirect("/signin");
+  }
+});
+
+app.get("/riskAnalysis", function (req, res) {
+  if (req.isAuthenticated()) {
+    res.render("riskAnalysis");
+  } else {
+    res.redirect("/signin");
+  }
+});
+
+app.get("/githubProjects", function (req, res) {
+  if (req.isAuthenticated()) {
+    res.render("githubProjects");
   } else {
     res.redirect("/signin");
   }
@@ -91,8 +121,9 @@ app.post("/register", function (req, res) {
       }
     });
   } else {
-    //alert passwords don't match
-    alert("The passwords don't match");
+    //error message when passwords don't match
+    document.getElementById("error-message").innerHTML =
+      "Passwords don't match";
   }
 });
 

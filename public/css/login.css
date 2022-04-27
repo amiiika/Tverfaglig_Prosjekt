@@ -8,9 +8,10 @@ body {
     align-items: center;
     padding-top: 40px;
     padding-bottom: 40px;
-    background-color: rgb(208, 202, 237);
+    background-color: rgb(209, 205, 230);
 }
 
+/* form settings */
 .form-signin {
     width: 100%;
     max-width: 330px;
@@ -30,13 +31,14 @@ body {
     margin-top: 5%;
 }
 
-
+/* button */
 .btn {
     background-color: rgb(138, 126, 196);
     color: whitesmoke;
     margin-top: 5%;
 }
 
+/* the image over form */
 .profile {
     width: 30%;
 }
