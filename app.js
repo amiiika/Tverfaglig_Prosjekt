@@ -1,4 +1,3 @@
-require("dotenv").config();
 //requiring modules
 const express = require("express");
 const app = express();
@@ -32,7 +31,6 @@ app.use(passport.session());
 
 //connect and make database
 mongoose.connect("mongodb://localhost:27017/userDB");
-mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/Prosjekt");
 
 const userSchema = new mongoose.Schema({
   username: String,
@@ -170,7 +168,7 @@ app.post("/signin", function (req, res) {
   });
 });
 
-//hoast heroku server and localhost:200
-app.listen(process.env.PORT || 200, function () {
+//localhost:200
+app.listen(200, function () {
   console.log("The server has started :P");
 });
