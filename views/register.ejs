@@ -20,7 +20,9 @@
                 <label for="password2">Repeat password</label>
             </div>
             <!-- error message when passwords dont match -->
-            <div id="error-message" style="display:none;"></div>
+            <p class="error-message">
+                <%= errorMessage %>
+            </p>
 
             <button class="w-100 btn btn-lg btn" type="submit">Submit</button>
 

@@ -35,6 +35,7 @@ body {
     background-color: rgb(164, 154, 218);
     color: rgb(74, 63, 129);
 }
+
 footer {
     text-align: center;
 }
@@ -53,6 +54,16 @@ footer {
 .nav-link:hover {
     color: whitesmoke;
 }
+
+/* Documentation views */
+.documentation-img {
+    margin-top: 5%;
+}
+
+.bold {
+    font-weight: bold;
+}
+
 /* RESPONSIVE CSS
 -------------------------------------------------- */
 
@@ -66,10 +77,13 @@ footer {
     .navbar-text {
         font-size: 5rem;
     }
+
     .featurette-heading {
         margin-top: 7rem;
     }
+
     .button {
         margin-top: 6rem;
     }
+
 }

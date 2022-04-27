@@ -1,9 +1,72 @@
 <!-- including header -->
 <%- include("partials/header") %>
 
+    <hr class="featurette-divider">
     <div class="row featurette">
-        <p> hei eowhfiuwehgfiøwesr</p>
-    </div>
+        <div class="col-md-7">
+            <h2 class="featurette-heading">Specific threats</h2>
+            <p class="lead">
+                Anyone has access to
+                create users on my website and there is no
+                verification through email for example. So if it was
+                important or personal info written here, anyone would
+                be able to see it.When you first log in, your user is
+                stored in cookies. Which means if you do not log out,
+                anyone with access to your computer will be able to
+                access the page. Since you do not need to log in again
+                with cookies.Another possibility is that a hacker finds
+                my database and tries to decrypt the passwords stored
+                there using a hash table.
+            </p>
+        </div>
+        <div class="col-md-5">
+            <img src="src/threats.jpg" alt="Someone stepping on small people">
+        </div>
+        </div>
+        
+        <hr class="featurette-divider">
+        <div class="row featurette">
+            <div class="col-md-7 order-md-2">
+                <h2 class="featurette-heading">Risk type</h2>
+                <p class="lead">
+                    The risk type on my website will be privacy risks.
+                    Since users enter their passwords, and if those passwords become
+                    public, several consequences can occur. If a user used the
+                    same password for their bank as on my website, they can suddenly
+                    be hacked there as well.
+                </p>
+            </div>
+            <div class="col-md-5 order-md-1">
+                <img src="src/risk1.png" alt="Person leaning a tower of the letters RISK">
+            </div>
+        </div>
+        
+        <hr class="featurette-divider">
+        <div class="row featurette">
+            <div class="col-md-6 order-md-1">
+                <h2 class="featurette-heading">Measures</h2>
+                <p class="lead">
+                    The measures I take for user security are that I hash
+                    and salt the passwords that are stored in my database. I talk
+                    more about that on the configuration page. What users can
+                    do to reduce the risk is to create new passwords for each
+                    page, and make them more complicated. For example, use random
+                    capital letters, numbers and characters.
+                </p>
+            </div>
+            <div class="col-md-6 order-md-2">
+                <h2 class="featurette-heading">Degree of risk</h2>
+                <p class="lead">
+                    The degree of risk varies from user to user.
+                    If they use the same password for their important
+                    and personal info, the risk is greater. There is not
+                    very important info on my website anyway, and it is
+                    a school project. So I'm pretty sure no one has plans
+                    to hack me in the near future. Therefore, I would
+                    say the degree of risk is relatively small in this situation.
+                </p>
+            </div>
+        </div>
 
     <!-- including footer -->
     <%- include("partials/footer") %>

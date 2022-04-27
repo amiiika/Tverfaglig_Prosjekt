@@ -15,6 +15,10 @@
                 <input type="password" class="form-control" placeholder="Password" name="password" required>
                 <label for="password">Password</label>
             </div>
+            <!-- error message when passwords or username don't exist -->
+            <p class="error-message">
+                <%= errorMessage %>
+            </p>
 
             <button class="w-100 btn btn-lg btn" type="submit">Submit</button>
 

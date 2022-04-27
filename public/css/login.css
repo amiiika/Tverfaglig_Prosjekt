@@ -37,8 +37,18 @@ body {
     color: whitesmoke;
     margin-top: 5%;
 }
+.btn:hover {
+    background-color: rgb(164, 154, 218);
+    color: rgb(74, 63, 129);
+}
 
 /* the image over form */
 .profile {
     width: 30%;
+}
+/* error message */
+.error-message {
+    color: rgb(140, 34, 34);
+    font-size: 1rem;
+
 }

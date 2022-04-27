@@ -54,11 +54,11 @@ app.get("/", function (req, res) {
 });
 
 app.get("/register", function (req, res) {
-  res.render("register");
+  res.render("register", { errorMessage: "" });
 });
 
 app.get("/signin", function (req, res) {
-  res.render("signin");
+  res.render("signin", { errorMessage: "" });
 });
 
 app.get("/logout", function (req, res) {
@@ -122,33 +122,43 @@ app.post("/register", function (req, res) {
     });
   } else {
     //error message when passwords don't match
-    document.getElementById("error-message").innerHTML =
-      "Passwords don't match";
+    res.render("register", { errorMessage: "Passwords don't match" });
   }
 });
 
 //sign in a user
 app.post("/signin", function (req, res) {
-  //requiring the input fields
+  //requiring input fields
   const username = req.body.username;
   const password = req.body.password;
 
-  //login credentials
-  const user = new User({
-    username: username,
-    password: password,
-  });
-
-  //authenticate the user
-  req.login(user, function (err) {
-    if (err) {
-      console.log(err);
-      res.redirect("/signin");
-    } else {
-      //save the user with cookies
-      passport.authenticate("login")(req, res, function () {
-        res.redirect("/home");
+  //check DB to find users
+  User.findOne({ username: username }, function (err, foundUser) {
+    //if username is found create an object
+    if (foundUser) {
+      const user = new User({
+        username: username,
+        password: password,
       });
+
+      //check if user matches users in DB
+      passport.authenticate("local", function (err, user) {
+        if (err) {
+          console.log(err);
+        } else {
+          //if user was found login, else redirect to login
+          if (user) {
+            req.login(user, function (err) {
+              res.redirect("/home");
+            });
+          } else {
+            res.render("signin", { errorMessage: "Password don't exist" });
+          }
+        }
+      })(req, res);
+    } else {
+      //if no username is found, error message
+      res.render("signin", { errorMessage: "Username don't exist" });
     }
   });
 });
