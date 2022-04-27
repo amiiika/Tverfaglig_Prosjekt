@@ -168,7 +168,7 @@ app.post("/signin", function (req, res) {
   });
 });
 
-//localhoast:200
-app.listen(200, function () {
+//hoast heroku server and localhost:200
+app.listen(process.env.PORT || 200, function () {
   console.log("The server has started :P");
 });
