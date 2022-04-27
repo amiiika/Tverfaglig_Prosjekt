@@ -68,6 +68,7 @@ app.get("/logout", function (req, res) {
 
 //after logging in views
 app.get("/home", function (req, res) {
+  //check if user is authenticated
   if (req.isAuthenticated()) {
     res.render("home");
   } else {
@@ -76,6 +77,7 @@ app.get("/home", function (req, res) {
 });
 
 app.get("/configuration", function (req, res) {
+  //check if user is authenticated
   if (req.isAuthenticated()) {
     res.render("configuration");
   } else {
@@ -84,6 +86,7 @@ app.get("/configuration", function (req, res) {
 });
 
 app.get("/riskAnalysis", function (req, res) {
+  //check if user is authenticated
   if (req.isAuthenticated()) {
     res.render("riskAnalysis");
   } else {
@@ -92,6 +95,7 @@ app.get("/riskAnalysis", function (req, res) {
 });
 
 app.get("/githubProjects", function (req, res) {
+  //check if user is authenticated
   if (req.isAuthenticated()) {
     res.render("githubProjects");
   } else {
@@ -132,7 +136,7 @@ app.post("/signin", function (req, res) {
   const username = req.body.username;
   const password = req.body.password;
 
-  //check DB to find users
+  //check DB to find username
   User.findOne({ username: username }, function (err, foundUser) {
     //if username is found create an object
     if (foundUser) {
@@ -141,17 +145,18 @@ app.post("/signin", function (req, res) {
         password: password,
       });
 
-      //check if user matches users in DB
+      //check if user object match user in DB
       passport.authenticate("local", function (err, user) {
         if (err) {
           console.log(err);
         } else {
-          //if user was found login, else redirect to login
+          //if user matches, authenticate and sign in
           if (user) {
             req.login(user, function (err) {
               res.redirect("/home");
             });
           } else {
+            //if password dont match, error message
             res.render("signin", { errorMessage: "Password don't exist" });
           }
         }

@@ -2,8 +2,131 @@
 <%- include("partials/header") %>
 
     <div class="row featurette">
-        <p> hei eowhfiuwehgfiøwesr</p>
-    </div>
+        <div class="col-md-7">
+            <h2 class="featurette-heading">Production</h2>
+            <p class="lead">
+                To create security on my website, I used cookies and sessions.
+                With cookies, I saved a session when a user logged in.
+                Then do not have to log in several times. When a user
+                logged out, the session was deleted. To achieve this I used the
+                module Passport, which is a very popular module. For it to work,
+                I downloaded: <span class="bold">Passport, Passport-local,
+                    Passport-local-mongoose and Express session.</span>
+                Other modulse I used is: <span class="bold">Mongoose,
+                    Express, Ejs and Bodyparser.</span>
+                <br><br>
+                To host my website I used <span class="bold">Heroku.</span> Heroku is a cloud
+                platform as a service supporting several programming languages.
+            </p>
+        </div>
+        <div class="col-md-5">
+            <img src="src/modules.png" alt="Modules required">
+        </div>
+        </div>
+        
+        <hr class="featurette-divider">
+        <div class="row featurette">
+            <div class="col-md-5 order-md-2">
+                <h2 class="featurette-heading">Development</h2>
+                <p class="lead">
+                    I start by using session. The secret is used to sign
+                    the session ID cookie. This is required. Resave forces the session
+                    to be saved back to the session store. SaveUnitialized
+                    forces a session that is "uninitialized" to be saved to the store.
+                    The passport is then used to manage the session. For the
+                    sessions to work, the authenticated user must be serialized to
+                    the session, and deserialized when subsequent requests are made.
+        
+        
+                </p>
+            </div>
+            <div class="col-md-7 order-md-1">
+                <img src="src/session.png" alt="Cookies and session">
+                <img src="src/manageUser.png" alt="Manage user session">
+            </div>
+        </div>
+        
+        <br><br>
+        <div class="row featurette">
+            <div class="col-md-7">
+                <p class="lead">
+                    To register a user, I use bodyparser to get
+                    the input feilds. Then they get saved into my
+                    database with mongoose. Passport makes this
+                    very easy by serialize the user for us. At
+                    the same time the password gets hased and salted.
+                    Salt is a random generated number added to the hash.
+                    When the user is saved, it gets authenticated and a session
+                    is started for the user ID.
+                    <br><br>
+                    The user wil be redirected to
+                    the home page, but only if its authenticated. To check that
+                    I use isAuthenticated. If the user don't meat the reqierenments,
+                    it gets redirected to the sign in page.
+                </p>
+            </div>
+            <div class="col-md-5">
+                <img src="src/register.png" alt="Register user">
+                <img src="src/userDB.png" alt="User in database">
+            </div>
+        </div>
+        
+        <br><br>
+        <div class="row featurette">
+            <div class="col-md-5 order-md-2">
+                <p class="lead">
+                    To sign in a user I serch the database to check if
+                    the username exists. If a username if found, a object
+                    is created. Then passport.authenticate will use this object
+                    to check if the username and password match. If it match it
+                    will be authenticated and signed in. If not error messages
+                    pop up and you have to sign in again.
+        
+                </p>
+            </div>
+            <div class="col-md-7 order-md-1">
+                <img src="src/views.png" alt="Views after logging in">
+                <img src="src/signin.png" alt="Logging in">
+            </div>
+        </div>
+        
+        <hr class="featurette-divider">
+        <div class="row featurette">
+            <div class="">
+                <h2 class="featurette-heading">Why did I use it?</h2>
+                <p class="lead">
+                    I choose to use the cookies and session method, because
+                    it's a much safer way to store user information, than just
+                    saving a user with mongoose. With passport, the password will be
+                    hased and salted multiple times. With each salt added the password
+                    will be harder to decode. Which keeps the user safer. The cookies
+                    will remember the user and make it possible to access the site without
+                    having to sign in every time. Which makes the user experience better.
+                    <br><br>
+                    I choose to host my website on heroku, because it's easy and
+                    good for smaller projects. Heroku's CLI toolset is well built
+                    and puts all of your app's info, settings, add-ons, logs, etc,
+                    right at your fingertips. It's also free.
+                </p>
+            </div>
+        </div>
+        
+        <hr class="featurette-divider">
+        <div class="row featurette">
+            <div class="col-md-5 order-md-2">
+                <h2 class="featurette-heading">The framework</h2>
+                <p class="lead">
+                    The framework was pretty easy to use. In the course by
+                    Angela, she goes through this type of coding. And with some
+                    research on the web, passport was easy to understand. There
+                    will also be pretty easy to take over this project, because
+                    I comment over the code where I think it's nessesary.
+                </p>
+            </div>
+            <div class="col-md-7 order-md-1">
+                <img src="src/easy.jpg" alt="Thumbs up">
+            </div>
+        </div>
 
     <!-- including footer -->
     <%- include("partials/footer") %>
