@@ -168,7 +168,7 @@ app.post("/signin", function (req, res) {
   });
 });
 
-//localhost:200 and other host codes if needed
+//localhost and other host codes if needed
 app.listen(process.env.PORT || 8000, function () {
   console.log("The server has started :P");
 });
