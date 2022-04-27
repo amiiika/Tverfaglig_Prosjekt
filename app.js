@@ -1,3 +1,4 @@
+require("dotenv").config();
 //requiring modules
 const express = require("express");
 const app = express();
@@ -31,6 +32,7 @@ app.use(passport.session());
 
 //connect and make database
 mongoose.connect("mongodb://localhost:27017/userDB");
+mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/Prosjekt");
 
 const userSchema = new mongoose.Schema({
   username: String,
